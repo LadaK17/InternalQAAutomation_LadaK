@@ -11,11 +11,11 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <java.version>java version 17.0.9-zulu</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-<dependencies>
+    <dependencies>
     <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
     <dependency>
         <groupId>com.github.javafaker</groupId>
@@ -27,7 +27,7 @@
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
         <version>7.9.0</version>
-        <scope>test</scope>
+        <scope>compile</scope>
     </dependency>
 
     <!-- Для Jackson -->
