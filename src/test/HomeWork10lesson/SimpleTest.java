@@ -1,4 +1,4 @@
-package HomeWork10lessonTests;
+package HomeWork10lesson;
 
 import org.testng.annotations.Test;
 

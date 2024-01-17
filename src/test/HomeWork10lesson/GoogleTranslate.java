@@ -1,4 +1,4 @@
-package HomeWork10lessonTests;
+package HomeWork10lesson;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
