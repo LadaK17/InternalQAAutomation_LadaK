@@ -3,7 +3,7 @@
 
     <test name="GoogleTranslate">
         <classes>
-            <class name="HomeWork10lesson.GoogleTranslate">
+            <class name="HomeWork10lesson.GoogleTranslate.GoogleTranslate">
             </class>
         </classes>
     </test>

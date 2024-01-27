@@ -1,4 +1,4 @@
-package HomeWork10lesson;
+package HomeWork10lesson.GoogleTranslate;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
