@@ -106,6 +106,79 @@
             <version>2.9.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.browserup/browserup-proxy-core -->
+        <dependency>
+            <groupId>com.browserup</groupId>
+            <artifactId>browserup-proxy-core</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>2.14.0</version> <!-- Replace with the latest version -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.8.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.sonatype.nexus/nexus-capability -->
+        <dependency>
+            <groupId>org.sonatype.nexus</groupId>
+            <artifactId>nexus-capability</artifactId>
+            <version>3.64.0-04</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-java</artifactId>-->
+<!--            <version>3.141.59</version> &lt;!&ndash; Replace with the version you need &ndash;&gt;-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>6.19.1</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>4.0.0-alpha-4</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.17.0</version>
+        </dependency>
+        <!-- Update the version to the latest available -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor -->
         <dependency>
