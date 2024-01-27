@@ -2,6 +2,7 @@ package HomeWork10lesson.IMDB;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import okhttp3.ResponseBody;
 import org.jsoup.Jsoup;
@@ -30,35 +31,38 @@ public class ImdbApi {
         var link = api.imdb.ImdbRestClient.BASE_URL + href;
 
         // Отримати рік випуску фільму
-        var releaseYear = getReleaseYear(ipcTitleElement);
+        var ipcTitleElementsReleaseYear = ipcTitleElement.select(".sc-1e00898e-7.hcJWUf.cli-title-metadata");
+        for (Element ipcTitleElementReleaseYear : ipcTitleElementsReleaseYear) {
+          var div = ipcTitleElementReleaseYear.select(".sc-1e00898e-8.hsHAHC.cli-title-metadata-item").first();
+          if (div != null) {
+            var releaseYear = div.text();
 
-        // Отримати значення з іншого тегу
-        var additionalValue = ipcTitleElement.select(".cli-title-metadata-item").text();
+            // Отримати значення з іншого тегу
+            var ipcTitleFilmRatingElements = ipcTitleElement.select(".sc-e2dbc1a3-0.ajrIH.sc-1e00898e-2.cvciZu.cli-ratings-container");
+            for (Element ipcTitleFilmRatingElement : ipcTitleFilmRatingElements) {
+              var span = ipcTitleFilmRatingElement.select(".ipc-rating-star.ipc-rating-star--base.ipc-rating-star--imdb.ratingGroup--imdb-rating").first();
+              if (span != null) {
+                var filmRating = span.text();
 
-        // Створюємо об'єкт FilmDetails та додаємо його до списку
-        FilmDetails filmDetails = new FilmDetails(h3Text, link, releaseYear, additionalValue);
-        allFilms.add(new AbstractMap.SimpleEntry<>(h3Text, filmDetails));
+                // Створюємо об'єкт FilmDetails та додаємо його до списку
+                FilmDetails filmDetails = new FilmDetails(h3Text, link, releaseYear, filmRating);
+
+                allFilms.add(new AbstractMap.SimpleEntry<>(h3Text, filmDetails));
+              }
+            }
+          }
+        }
       }
     }
     return allFilms;
   }
 
-  private String getReleaseYear(Element ipcTitleElement) {
-    var releaseYearElement = ipcTitleElement.select(".sc-1e00898e-8.hsHAHC.cli-title-metadata-item");
-    if (releaseYearElement != null && !releaseYearElement.isEmpty()) {
-      return releaseYearElement.text();
-    }
-    return "N/A";
-  }
 
   public List<FilmDetails> getTop100Films() throws IOException {
-    List<Map.Entry<String, FilmDetails>> filmEntries = getTopChart();
-    return filmEntries.stream()
+    return getTopChart().stream()
             .map(Map.Entry::getValue)
             .limit(100)
             .toList();
   }
-
-
 
 }

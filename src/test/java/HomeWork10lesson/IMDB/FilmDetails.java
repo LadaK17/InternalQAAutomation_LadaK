@@ -4,14 +4,14 @@ public class FilmDetails {
     private String name;
     private String link;
     private String releaseYear;
-    private String additionalValue;
+    private String filmRating;
 
     // Конструктор з параметрами
-    public FilmDetails(String name, String link, String releaseYear, String additionalValue) {
+    public FilmDetails(String name, String link, String releaseYear, String filmRating) {
         this.name = name;
         this.link = link;
         this.releaseYear = releaseYear;
-        this.additionalValue = additionalValue;
+        this.filmRating = filmRating;
     }
 
     // Геттери і сеттери для всіх полів
@@ -40,11 +40,11 @@ public class FilmDetails {
         this.releaseYear = releaseYear;
     }
 
-    public String getAdditionalValue() {
-        return additionalValue;
+    public String getFilmRating() {
+        return filmRating;
     }
 
-    public void setAdditionalValue(String additionalValue) {
-        this.additionalValue = additionalValue;
+    public void setFilmRating(String filmRating) {
+        this.filmRating = filmRating;
     }
 }
