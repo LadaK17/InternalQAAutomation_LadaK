@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/Users/ladaharcenko/IdeaProjects/InternalQAAutomation_LadaK/src/test/java/HomeWork12lesson/SauceTest.java"><classes><class name="HomeWork12lesson.SauceTest"><methods><include name="SauceTestCase"/></methods></class></classes></test></suite>

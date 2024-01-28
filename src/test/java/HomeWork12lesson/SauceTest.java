@@ -1,5 +1,6 @@
 package HomeWork12lesson;
 
+import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
 
 public class SauceTest {
@@ -11,6 +12,7 @@ public class SauceTest {
     private final InfoPage infoPage = new InfoPage();
     private final CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
     private final SuccessPurchasePage successPurchasePage  = new SuccessPurchasePage();
+
 
     @Test
     public void SauceTestCase (){

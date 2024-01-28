@@ -1,4 +1,4 @@
-package DriverManagerHelper;
+package HomeWork12lesson.DriverManagerHelper;
 
 import com.browserup.bup.BrowserUpProxy;
 import com.browserup.bup.proxy.CaptureType;
@@ -46,19 +46,19 @@ public class DriverManagerHelper {
     }
 
     public static void configureSelenide(String testName) {
-        Configuration.proxyEnabled = true;
+        Configuration.proxyEnabled = false;
         Configuration.proxyHost = NetworkUtils.getMachineIpAddress();
         Configuration.fileDownload = FileDownloadMode.PROXY;
         Configuration.pageLoadTimeout = 120_000;
         setConfiguration(testName);
-
-        open("https://www.saucedemo.com/");
+//
+//        open("https://www.saucedemo.com/");
         WebDriverRunner.getWebDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         WebDriverRunner.getWebDriver().manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
     }
 
     public static void setConfiguration(String testName) {
-        Configuration.remote = "http://localhost:4444/wd/hub";
+//        Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.headless = false;
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
