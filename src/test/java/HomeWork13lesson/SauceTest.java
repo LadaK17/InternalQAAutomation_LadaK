@@ -1,6 +1,5 @@
-package HomeWork12lesson;
+package HomeWork13lesson;
 
-import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.open;

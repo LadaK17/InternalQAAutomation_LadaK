@@ -1,18 +1,14 @@
-package HomeWork12lesson;
+package HomeWork13lesson;
 
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.openqa.selenium.By;
-import static com.codeborne.selenide.Selenide.*;
-import com.codeborne.selenide.Condition;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
-import com.codeborne.selenide.Condition;
 
 import java.util.stream.IntStream;
 
