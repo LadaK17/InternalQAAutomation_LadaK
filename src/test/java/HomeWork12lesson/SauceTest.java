@@ -3,6 +3,8 @@ package HomeWork12lesson;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class SauceTest {
     private final LoginPage loginPage = new LoginPage();
 
@@ -16,6 +18,7 @@ public class SauceTest {
 
     @Test
     public void SauceTestCase (){
+
         loginPage.openLoginPage("https://www.saucedemo.com/");
         loginPage.setLogin("standard_user");
         loginPage.setPasswordField("secret_sauce");
