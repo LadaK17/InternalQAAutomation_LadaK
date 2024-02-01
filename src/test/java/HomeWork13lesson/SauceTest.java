@@ -1,7 +1,9 @@
 package HomeWork13lesson;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static HomeWork13lesson.DriverManagerHelper.DriverManagerHelper.init;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SauceTest {
@@ -14,7 +16,11 @@ public class SauceTest {
     private final CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
     private final SuccessPurchasePage successPurchasePage  = new SuccessPurchasePage();
 
-
+//    @BeforeMethod
+//    public void setUp() {
+//        // Initialize the driver using DriverManagerHelper
+//        init("SauceTest");
+//    }
     @Test
     public void SauceTestCase (){
 
