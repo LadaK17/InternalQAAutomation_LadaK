@@ -1,6 +1,7 @@
 package HomeWork13lesson;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -11,6 +12,7 @@ public class CartPage {
 
     private final SelenideElement checkout = $("#checkout");
 
+    @Step ("Check Cart Items")
     public void checkCartItems(String... expectedPrices) {
         // Найти все элементы с ценой продукта в корзине
         $$(".cart_item .inventory_item_price").forEach(itemPrice -> {
@@ -26,6 +28,7 @@ public class CartPage {
         });
     }
 
+    @Step ("Open Info File")
     public void openInfoPage (){
         checkout.click();
     }

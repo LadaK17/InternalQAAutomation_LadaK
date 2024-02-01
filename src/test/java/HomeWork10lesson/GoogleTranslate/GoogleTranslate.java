@@ -2,6 +2,7 @@ package HomeWork10lesson.GoogleTranslate;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,12 +10,23 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class GoogleTranslate {
 
+    @Epic(value = "Translator")
+    @Feature(value = "English translation")
+    @Story(value = "Basic")
     @Test
+    @Severity(value = SeverityLevel.BLOCKER)
+    @Flaky
+    @Issue(value = "SCAN-135")
+    @TmsLink(value = "SCAN-158")
+    @Links(value = {@Link(name = "Link1", url = "https://www.google.co.uk/"),
+            @Link(name = "Link2", url = "https://www.google.co.uk/")})
+    @Description("Verify translation for English")
     public void testTranslationEN() {
         performTranslationTest("https://translate.google.com.ua/?hl=en&sl=auto&tl=en&op=translate", "I'll study TESTNG cool.");
     }
 
     @Test
+    @Description("Verify translation for French")
     public void testTranslationFR() {
         performTranslationTest("https://translate.google.com.ua/?hl=en&sl=auto&tl=fr&op=translate", "Je vais étudier le test.");
     }
@@ -36,7 +48,7 @@ public class GoogleTranslate {
 
     @Test
     public void testTranslationCS() {
-        performTranslationTest("https://translate.google.com.ua/?hl=en&sl=auto&tl=cs&op=translate", "Budu studovat testng cool.");
+        performTranslationTest("https://translate.google.com.ua/?hl=en&sl=auto&tl=cs&op=translate", "Studuji testng cool.");
     }
 
     @Test
@@ -109,21 +121,26 @@ public class GoogleTranslate {
         performTranslationTest("https://translate.google.com.ua/?hl=en&sl=auto&tl=af&op=translate", "Ek studeer testng cool.");
     }
 
+    @Step("Performing translation test for {url}")
     private void performTranslationTest(String url, String expectedTranslation) {
         openGoogleTranslate(url);
         enterTextAndTranslate("Я круто вивчу TestNG.");
         verifyTranslation(expectedTranslation);
     }
 
+
+    @Step("Opening Google Translate with URL: {url}")
     private void openGoogleTranslate(String url) {
         Selenide.open(url);
     }
 
+    @Step("Entering text: {text} and translating")
     private void enterTextAndTranslate(String text) {
         $(".er8xn").setValue(text).pressEnter();
         $(".ryNqvb").shouldBe(Condition.visible);
     }
 
+    @Step("Verifying translation: {expectedTranslation}")
     private void verifyTranslation(String expectedTranslation) {
         String actualTranslation = $(".ryNqvb").getText();
         System.out.println("Translation: " + actualTranslation);

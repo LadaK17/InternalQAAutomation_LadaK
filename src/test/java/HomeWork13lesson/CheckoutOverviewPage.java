@@ -1,6 +1,7 @@
 package HomeWork13lesson;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -9,7 +10,7 @@ public class CheckoutOverviewPage {
     private final SelenideElement total = $(".summary_total_label");
 
     private final SelenideElement finishButton = $("#finish");
-
+    @Step("Print Tax Percentage")
     public void printTaxPercentage() {
         try {
             double totalCost = Double.parseDouble(total.getText().replaceAll("[^0-9.]", ""));
@@ -25,6 +26,7 @@ public class CheckoutOverviewPage {
             System.out.println("Помилка при перетворенні тексту в число: " + e.getMessage());
         }
     }
+    @Step ("Click Finish Button")
     public void clickFinishButton (){
         finishButton.click();
     }

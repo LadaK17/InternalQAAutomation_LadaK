@@ -3,6 +3,7 @@ package HomeWork13lesson;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -24,11 +25,11 @@ public class ProductPage {
 
     private final SelenideElement cartButton = $(".shopping_cart_link");
 
-
+    @Step("Check Product List")
     public void checkProductList(){
         productList.shouldHave(CollectionCondition.size(6));
     }
-
+    @Step("Click Add to Cart")
     public void clickAddToCart() {
         // Нажать "Add to Cart" для товаров с ценой $7.99
         clickForPrice("$7.99");
@@ -36,7 +37,7 @@ public class ProductPage {
         // Нажать "Add to Cart" для товаров с ценой $9.99
         clickForPrice("$9.99");
     }
-
+    @Step("Click For Price")
     private void clickForPrice(String price) {
         ElementsCollection items = $$("div.inventory_item");
 
@@ -45,7 +46,7 @@ public class ProductPage {
                 .findFirst()
                 .ifPresent(i -> items.get(i).$(".btn_inventory").click());
     }
-
+    @Step("Click Cart Button")
     public void clickCartButton (){
         cartButton.click();
     }
