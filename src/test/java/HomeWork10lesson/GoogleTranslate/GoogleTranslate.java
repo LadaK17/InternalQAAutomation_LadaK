@@ -46,7 +46,7 @@ public class GoogleTranslate {
 
     @Test
     public void testTranslationFI() {
-        performTranslationTest("https://translate.google.com.ua/?hl=en&sl=auto&tl=fi&op=translate", "Opiskelen testiä siistiä.");
+        performTranslationTest("https://translate.google.com.ua/?hl=en&sl=auto&tl=fi&op=translate", "Opiskelen testien siistiä.");
     }
 
     @Test
